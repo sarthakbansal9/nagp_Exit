@@ -1,0 +1,37 @@
+<app-admin-home></app-admin-home>
+<div class="container" style="margin-left: 13%;">
+  <h1>Edit Batch</h1>
+    <form [formGroup]="batchform"  novalidate>
+    <select class="form-control" style="width: 50%"  formControlName="batchId" required>
+        <option value="">Please select a Batch</option>
+        <option *ngFor="let m of editBatch" [value]="m.batchId">
+                {{m.technology}}{{space}}{{m.year}}
+        </option>
+      </select>
+      <div style="padding: 10px">
+    <button  (click) = getBatch()>Get Data</button>
+      </div>
+    <div *ngIf="check" class="container">
+        <form [formGroup]="updateform" style="width: 50%" novalidate>
+            <div>
+              <label>Technology</label>
+              <input type="text" class="form-control" value={{batchInfo.technology}} formControlName="technology"/>
+            </div>
+    
+            <div class="form-group">
+              <label>Description</label>
+              <input type="text" class="form-control" value="{{batchInfo.batchDescription}}" formControlName="batchDescription" />
+            </div>
+    
+            <div class="form-group">
+              <label> Year</label>
+              <input type="text"  value="{{batchInfo.year}}"  formControlName="year"/>
+            </div>
+    
+            <div>
+              <button (click)="update()">Update</button>
+            </div>
+          </form>
+    </div>
+    </form>
+  </div>

@@ -1,0 +1,34 @@
+<app-applicant-home></app-applicant-home>
+<div *ngIf="check==true">
+  <div class="container">
+    <form [formGroup]="applicantEditform" novalidate>
+        <div *ngIf="validateMessage != ''">
+            <h3 class="has-info">{{validateMessage}}</h3>
+          </div>
+
+      <div>
+        <label>Applicant Name</label>
+        <input type="text" class="form-control" value={{editapplicant.name}} formControlName="name" />
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" value="{{editapplicant.email}}" formControlName="email" />
+      </div>
+
+      <div class="form-group">
+        <label>Conatct Number</label>
+        <input type="number" step="1" pattern="\d+" value="{{editapplicant.contactNumber}}"
+          formControlName="contactNumber" />
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" value="{{editapplicant.password}}" formControlName="password" />
+      </div>
+      <div>
+        <button (click)="updateApplicantDetails()">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

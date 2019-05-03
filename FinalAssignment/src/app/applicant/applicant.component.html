@@ -1,0 +1,54 @@
+<app-admin-home></app-admin-home>
+<div class="container" style="margin-left: 13%;">
+  <h1>Add Applicant</h1>
+  <form [formGroup]="applicantform" style="width: 50%" (ngSubmit)="submitRegistration()" novalidate>
+    <div *ngIf="validMessage != ''">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
+    <div class="form-group">
+      <label>Applicant Identifier</label>
+      <input type="number" step="1" pattern="\d+" class="form-control" formControlName="applicantId" required />
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name" required autofocus />
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" formControlName="email" required autofocus />
+    </div>
+    <div class="form-group">
+      <label>Contact Number</label>
+      <input type="number" step="1" pattern="\d+" class="form-control" formControlName="contactNumber" required />
+    </div>
+
+    <div class="form-group">
+      <label>Level</label>
+      <input type="text" class="form-control" value="level1"  formControlName="levelId" required autofocus />
+    </div>
+    <div class="form-group">
+      <label>Batch</label>
+      <select class="form-control" formControlName="batchId" required>
+        <option value="">Please select a Batch</option>
+        <option *ngFor="let m of batch1" [value]="m.batchId">
+          {{m.technology}}{{m.year}}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>NAGP Status</label>
+      <input type="text" class="form-control" value="aspiring" formControlName="nagpStatus" required
+        autofocus />
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" formControlName="password" required autofocus />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<router-outlet></router-outlet>

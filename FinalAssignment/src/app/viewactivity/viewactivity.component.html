@@ -1,0 +1,54 @@
+<app-admin-home></app-admin-home>
+<div style="margin-left: 13%;" >
+    
+    
+</div>
+<div class="container" style="margin-left: 13%;">
+  <h1>Activities</h1>
+  <br>
+  <select (change)="filterByLevel($event.target.value)" class="form-control" style="width: 35%" id="level" >
+      <option value="def">Select Level</option>
+      <option *ngFor="let abc of levels" value="{{abc.levelId}}">{{ abc.levelName}}</option>
+    </select> 
+    <br>
+    <select (change)="filterByBatch($event.target.value)" class="form-control" style="width: 35%" id="batch" >
+      <option value="pok">Select Batch</option>
+      <option *ngFor="let abc of batches" value="{{abc.batchId}}">{{ abc.technology}} {{abc.year}}</option>
+    </select> 
+    <br><br>
+  
+    <table class="table table-bordered table-inverse" style="width: 50%">
+      <tr>
+        <th>Activity Name</th>
+        <th>Description</th>
+        <th>Max Attempts</th>
+        <th>Qualification Points</th>
+        <th>Level Name</th>
+        <th>Batch </th>
+      </tr>
+      <tr *ngFor="let bike of activity">
+        <td>
+          {{bike.name}}
+        </td>
+        <td>
+          {{bike.description}}
+        </td>
+        <td>
+            {{bike.maxAttempts}}
+        </td>
+         <td>
+              {{bike.qualifyPoints}}
+        </td>
+        <td>
+            {{bike.level.levelName}}
+        </td>
+         <td>
+              {{bike.batch.technology}}{{bike.batch.year}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  
+
+
+

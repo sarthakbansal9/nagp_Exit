@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="w3-sidebar w3-black w3-bar-block w3-border w3-card " style="width:12.5%">
+  <h3 class="w3-bar-item " style="color:rgb(1, 1, 175)">Menu</h3>
+  <a class="w3-button w3-block nav-link w3-hover-none w3-hover-text-blue w3-left-align" routerLink='/adminhome'> Admin Home <span class="sr-only">(current)</span></a>
+  
+  <button onclick="myFunction('Demo1')" class="w3-button  w3-hover-none w3-hover-text-blue w3-block w3-black w3-left-align ">Level</button>
+    <div id="Demo1" class="w3-hide w3-indigo">
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/level'> Add-Level <span class="sr-only">(current)</span></a>
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/editlevel'> Edit-Level <span class="sr-only">(current)</span></a>
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/viewlevel'> View-Level <span class="sr-only">(current)</span></a>
+    </div>
+    <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-hover-none w3-hover-text-blue w3-black w3-left-align">Batch</button>
+    <div id="Demo2" class="w3-hide w3-indigo">
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/batch'> Add-Batch <span class="sr-only">(current)</span></a>
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/editbatch'> Edit-Batch <span class="sr-only">(current)</span></a>
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/viewbatch'> View-Batch <span class="sr-only">(current)</span></a>
+    </div>     
+    <button onclick="myFunction('Demo3')" class="w3-button w3-hover-none w3-hover-text-blue w3-block w3-black w3-left-align">Applicant</button>
+    <div id="Demo3" class="w3-hide w3-indigo">
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/applicant'> Add-Applicant <span class="sr-only">(current)</span></a>
+      <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/viewapplicant'> View-Applicant <span class="sr-only">(current)</span></a>
+    </div>       
+    <button onclick="myFunction('Demo4')" class="w3-button w3-hover-none w3-hover-text-blue w3-block w3-black w3-left-align">Activity</button>
+    <div id="Demo4" class="w3-hide w3-indigo">
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/activity'> Add-Activity <span class="sr-only">(current)</span></a>
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/editactivity'> Edit-Activity <span class="sr-only">(current)</span></a>
+       <a class="nav-link w3-hover-none w3-hover-text-black" routerLink='/adminhome/viewactivity'> View-Activity <span class="sr-only">(current)</span></a>
+    </div>
+            <a class="w3-button w3-block nav-link w3-hover-none w3-hover-text-blue w3-left-align"  routerLink='/adminlogout'>Logout</a>   
+</div>
+
+  
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/adminhome'> Admin Home <span class="sr-only">(current)</span></a>
+              </li>
+              <div class="dropdown">
+                  <li class="dropbtn">Level <i class="fa fa-caret-down"></i> </li>
+                  <div class="dropdown-content">
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/adminhome/level'> Add-Level <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink='/adminhome/editlevel'> Edit-Level <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink='/adminhome/viewlevel'> View-Level <span class="sr-only">(current)</span></a>
+              </li>
+               </div>
+          </div>
+          <div class="dropdown">
+              <li class="dropbtn">Batch <i class="fa fa-caret-down"></i> </li>
+              <div class="dropdown-content">
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/adminhome/batch'> Add-Batch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/adminhome/editbatch'> Edit-Batch</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink='/adminhome/viewbatch'> View-Batch</a>
+            </li>
+              </div>
+          </div>
+          <div class="dropdown">
+              <li class="dropbtn">Applicant <i class="fa fa-caret-down"></i> </li>
+              <div class="dropdown-content">
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/adminhome/applicant'>Add-Applicant</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink='/adminhome/viewapplicant'>View-Applicant</a>
+            </li>
+              </div>
+          </div>
+          <div class="dropdown">
+              <li class="dropbtn">Activity <i class="fa fa-caret-down"></i> </li>
+              <div class="dropdown-content">
+          <li class="nav-item">
+            <a class="nav-link" routerLink='/adminhome/activity'>Add-Activity</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink='/adminhome/editactivity'>Edit-Activity</a>
+            </li>
+          <li class="nav-item">
+              <a class="nav-link" routerLink='/adminhome/viewactivity'>View-Activity</a>
+            </li>
+              </div>
+            </div>
+          <li class="nav-item">
+              <a class="nav-link" routerLink=''>Logout</a>
+            </li>
+        </ul>
+      </div>
+  </nav> -->

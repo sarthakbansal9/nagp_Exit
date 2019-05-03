@@ -1,0 +1,51 @@
+<!-- <div class="container">
+  <form [formGroup]="levelform" (ngSubmit)="submitRegistration()" novalidate>
+    <div *ngIf="validMessage != ''">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" class="form-control" formControlName="name" required autofocus/>
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="text" class="form-control" formControlName="password" required/>
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+</div> -->
+<app-admin-home></app-admin-home>
+<div class="container" style="margin-left: 13%;">
+  <h1>Add Level</h1>
+    <form [formGroup]="levelform" style="width: 50%" (ngSubmit)="submitRegistration()" novalidate>
+      <div *ngIf="validMessage != ''">
+        <h3 class="has-info">{{validMessage}}</h3>
+      </div>
+      
+       <div class="form-group">
+        <label>Level Identifier</label>
+         <input type="text" class="form-control" formControlName="levelId"/>
+       </div>
+       <div class="form-group">
+        <label>Level Number</label>
+         <input type="number" class="form-control" formControlName="levelNumber" required autofocus/>
+       </div>
+       <div class="form-group">
+        <label>level Name</label>
+         <input type="text" class="form-control" formControlName="levelName" required autofocus/>
+       </div>
+      <div class="form-group">
+       <label>Description</label>
+        <input type="text" class="form-control" formControlName="levelDesc" required autofocus/>
+      </div>
+      
+      <div class="form-group">
+        <label>Qualification points</label>
+        <input type="number" step="1" pattern="\d+" class="form-control" formControlName="qualifyPoints" required/>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+  </div>
+  <router-outlet></router-outlet>

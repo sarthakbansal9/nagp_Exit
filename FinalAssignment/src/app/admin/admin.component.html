@@ -1,0 +1,20 @@
+<div class="container">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Password</th>
+    </tr>
+    <tr *ngFor="let bike of admin">
+      <td>
+        {{bike.id}}
+      </td>
+      <td>
+        {{bike.name}}
+      </td>
+      <td>
+        {{bike.password}}
+      </td>
+    </tr>
+  </table>
+</div>

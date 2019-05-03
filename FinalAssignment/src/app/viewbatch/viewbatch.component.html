@@ -1,0 +1,27 @@
+<app-admin-home></app-admin-home>
+<div class="container" style="margin-left: 13%;">
+  <h1>All Batches</h1>
+  <table class="table table-bordered table-inverse" style="width: 50%">
+    <tr>
+      <th>Technology</th>
+      <th>Description</th>
+      <th>Start Date</th>
+      <th>Year</th>
+    </tr>
+    <tr *ngFor="let bike of batch">
+      <td>
+        {{bike.technology}}
+      </td>
+      <td>
+        {{bike.batchDescription}}
+      </td>
+      <td>
+        {{bike.startDate}}
+      </td>
+      <td>
+        {{bike.year}}
+      </td>
+
+    </tr>
+  </table>
+</div>

@@ -1,0 +1,31 @@
+<app-applicant-home></app-applicant-home>
+<div class="container">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <th>Activity Name</th>
+      <th>Description</th>
+      <th>Max Attempts</th>
+      <th>Qualification Points</th>
+      <th>Enroll</th>
+
+    </tr>
+    <tr *ngFor="let bike of activity">
+      <td>
+        {{bike.name}}
+      </td>
+      <td>
+        {{bike.description}}
+      </td>
+      <td>
+        {{bike.maxAttempts}}
+      </td>
+      <td>
+        {{bike.qualifyPoints}}
+      </td>
+      <td>
+        <button (click) = "checkActivityAvailability($event.target.id)" id="{{bike.activityId}}">Add Activity</button>
+      </td>
+
+    </tr>
+  </table>
+</div>

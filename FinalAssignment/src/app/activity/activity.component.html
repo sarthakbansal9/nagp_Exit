@@ -1,0 +1,56 @@
+<app-admin-home></app-admin-home>
+<div  class="container" style="margin-left: 14%;">
+  <h1>Add Activity</h1>
+  <form [formGroup]="activityform" style="width: 50%" (ngSubmit)="submitRegistration()" novalidate>
+    <div *ngIf="validMessage != ''">
+      <h3 class="has-info">{{validMessage}}</h3>
+    </div>
+
+    <div class="form-group">
+        <label>Activity Identifier</label>
+         <input type="text" class="form-control" formControlName="activityId"/>
+      </div>
+      <div class="form-group">
+          <label>Batch</label>
+          <select class="form-control" formControlName="batchId" required>
+            <option value="">Please select a Batch</option>
+            <option *ngFor="let m of batch1"
+                    [value]="m.batchId">
+                    {{m.technology}}{{m.year}}
+            </option>
+          </select>
+     </div>
+     <div class="form-group">
+      <label>Level</label>
+      <select class="form-control" formControlName="levelId" required>
+        <option value="">Please select a Level</option>
+        <option *ngFor="let m of level1"
+                [value]="m.levelId">
+                {{m.levelName}}
+        </option>
+      </select>
+     </div>
+    <div class="form-group">
+      <label>Name</label>
+       <input type="text" class="form-control" formControlName="name" required autofocus/>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+         <input type="text" class="form-control" formControlName="description" required autofocus/>
+     </div>
+   
+   
+     <div class="form-group">
+      <label>Max Attempts</label>
+      <input type="number" step="1" pattern="\d+" class="form-control" formControlName="maxAttempts" required/>
+    </div>
+    <div class="form-group">
+      <label>Qualify Points</label>
+      <input type="number" step="1" pattern="\d+" class="form-control" formControlName="qualifyPoints" required/>
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </form>
+</div>
+
+<router-outlet></router-outlet>

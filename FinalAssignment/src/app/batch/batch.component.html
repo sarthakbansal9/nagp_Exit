@@ -1,0 +1,37 @@
+<app-admin-home></app-admin-home>
+<div class="container" style="margin-left: 13%;">
+  <h1> Add Batch</h1>
+    <form [formGroup]="batchform" style="width: 50%" (ngSubmit)="submitRegistration()" novalidate>
+      <div *ngIf="validMessage != ''">
+        <h3 class="has-info">{{validMessage}}</h3>
+      </div>
+
+      <div class="form-group">
+          <label>Batch Identifier</label>
+           <input type="text" class="form-control" formControlName="batchId"/>
+       </div>
+
+       <div class="form-group">
+          <label>Year</label>
+           <input type="text" placeholder="eg:1945"  class="form-control" formControlName="year" required autofocus/>
+       </div>
+
+       <div class="form-group">
+          <label>Technology</label>
+           <input type="text"   class="form-control" formControlName="technology" required autofocus/>
+       </div>
+       
+
+      <div class="form-group">
+          <label>Description</label>
+           <input type="text" class="form-control" formControlName="batchDescription" required autofocus/>
+       </div>
+
+      <div class="form-group">
+       <label>Start Date</label>
+        <input type="text" class="form-control" placeholder="dd/MM/yyyy" formControlName="startDate" required autofocus/>
+      </div>
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+  </div>
+  <router-outlet></router-outlet>

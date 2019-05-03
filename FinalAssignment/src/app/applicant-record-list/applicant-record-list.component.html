@@ -1,0 +1,49 @@
+<app-admin-home></app-admin-home>
+<div class="container" style="margin-left: 13%;">
+<h1>Applicant Activity</h1>
+  <form [formGroup]="recordForm">
+    <table class="table table-bordered table-inverse" style="width: 75%">
+      <tr>
+        <th>Activity Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>%age Score</th>
+        <th>Action</th>
+      </tr>
+      <tr *ngFor="let bike of applicantData">
+        <td>
+          {{bike.activity.name}}
+        </td>
+        <td>
+          {{bike.description}}
+        </td>
+
+
+        <td>
+          <div *ngIf="bike.status == 'REVIEW_PENDING';else showLabel">
+            <select  formControlName="status" required>
+              <option value="bike.status">Current Status :{{bike.status}}</option>
+              <option *ngFor="let m of Status" [value]="m">
+                {{m}}
+              </option>
+            </select>
+
+          </div>
+          <ng-template #showLabel>
+            <div>
+              <label for="">{{bike.status}}</label>
+            </div>
+          </ng-template>
+
+        </td>
+        <td>
+          <input type="number"  min="1" max="100" placeholder="% Score" formControlName="percentageScore" required autofocus />
+        </td>
+        <td>
+          <button (click)="updateApplicantActivityStatus($event.target.id)" id="{{bike.recordId}}">Update</button>
+        </td>
+      </tr>
+
+    </table>
+  </form>
+</div>

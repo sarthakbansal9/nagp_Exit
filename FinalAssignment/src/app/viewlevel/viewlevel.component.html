@@ -1,0 +1,28 @@
+<app-admin-home></app-admin-home>
+<div class="container" style="margin-left: 13%;">
+  <h1>Levels</h1>
+    <table class="table table-bordered table-inverse" style="width: 50%">
+      <tr>
+        <!-- <th>Id</th> -->
+        <th>Level Number</th>
+        <th>Level Name</th>
+        <th>Description</th>
+        <th>Qualification Points</th>
+      </tr>
+      <tr *ngFor="let bike of level">
+        <td>
+          {{bike.levelNumber}}
+        </td>
+        <td>
+            {{bike.levelName}}
+        </td>
+         <td>
+              {{bike.levelDesc}}
+        </td>
+         <td>
+                {{bike.qualifyPoints}}
+        </td>
+      </tr>
+    </table>
+  </div>
+  

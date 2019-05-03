@@ -1,0 +1,52 @@
+<app-applicant-home></app-applicant-home>
+<div class="container">
+  <table class="table table-bordered table-inverse">
+    <tr>
+      <th>Activity Name</th>
+      <th>Description</th>
+      <th>Points</th>
+      <th>Remaining Attempt</th>
+      <th>status</th>
+
+    </tr>
+    <tr *ngFor="let bike of AAR">
+      <td>
+        {{bike.activity.name}}
+      </td>
+      <td>
+        {{bike.description}}
+      </td>
+      <td>
+        {{bike.pointsEarned}}
+      </td>
+      <td>
+        {{bike.activity.maxAttempts-bike.count }}
+      </td>
+      <td>
+
+        <div *ngIf="bike.activity.maxAttempts-bike.count==0; else checkStatus ">
+            <label>Exceeded Maximum Attempts</label>
+        </div>
+       <ng-template #checkStatus>
+         <div *ngIf="bike.status == 'REVIEW_PENDING'">
+             <label for="">REVIEW_PENDING</label>
+         </div>
+        <div *ngIf="bike.status != 'COMPLETED' && bike.status != 'REVIEW_PENDING'">
+          <form [formGroup]="updateStatusForm" novalidate> 
+          <select class="form-control" formControlName="status" required>
+            <option value="bike.status">Current Status :{{bike.status}}</option>
+            <option *ngFor="let m of Status" [value]="m">
+              {{m}}
+            </option>
+          </select>
+         <button (click)= "updateStatus($event.target.id)" id="{{bike.recordId}}">Update Status</button>
+        </form>
+        </div>
+        <div *ngIf="bike.status == 'COMPLETED'">
+            <label for="">COMPLETED</label>
+        </div>
+      </ng-template> 
+      </td>
+    </tr>
+  </table>
+</div>
